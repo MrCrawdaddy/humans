@@ -1,0 +1,40 @@
+ {% load staticfiles %}
+ <!doctype html>
+ <head>
+   <title>humans of the high country</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="{% static "documentaries/style.css" %}">
+ </head>
+ <body>
+ {% if error_message %}<p><strong>{{ error_message }}</strong><p>{% endif %}
+   <div id="topBar">
+     <div id="headL">
+         <a href="{% url 'documentaries:index' %}"><span id="boldTitle">humans</span> of the high country</a>
+     </div>
+     <div id=headR>
+       <ul>
+         <li>
+           <a href="search">explore</a>
+         </li>
+         <li>
+           <a href="submit">add your story</a>
+         </li>
+         <li>
+           <a href="about">about</a>
+         </li>
+         {% if user.is_authenticated %}
+         <div id="user_status"> Welcome, {{user.profile.perfered_name}}<br>
+          <a href="{% url 'logout' %}">Logout</a>
+         </div>
+         {% else %}
+         <a href="{% url 'login' %}">Login</a>
+         {% endif %}
+         </li>
+       </ul>
+     </div>
+   </div>
+   <div id="main">
+       {% block content %}
+       {% endblock %}
+   </div>
+ </body>

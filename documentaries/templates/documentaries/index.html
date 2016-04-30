@@ -1,0 +1,14 @@
+{% extends 'documentaries/base.html' %}
+{% block content %}
+<h1>Humans of the High Country Documentaries</h1>
+
+{% if documentary_list %}
+    <ul>
+    {% for documentary in documentary_list %}
+        <li><a href="{% url 'documentaries:detail' documentary.id %}">{{ documentary.title }}</a></li>
+    {% endfor %}
+    </ul>
+{%else%}
+    <p>No Documentaries are available.</p>
+{% endif %}
+{% endblock %}

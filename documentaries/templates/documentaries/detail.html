@@ -1,0 +1,25 @@
+{% extends 'documentaries/base.html' %}
+{% block content %}
+    <div id = "pictures">
+        <img id="video" src="{{ documentary.file_location }}">
+      <hr>
+      <img id="thumb1" src="{{ documentary.file_location }}">
+      <img id="thumb2" src="{{ documentary.file_location }}">
+      <img id="thumb3" src="{{ documentary.file_location }}">
+      <img id="thumb4" src="{{ documentary.file_location }}">
+    </div>
+    <div id="right">
+      <h2 id="featured">Featured Human</h2>
+      <em id="subjectName">{{ documentary.subject }}</em>
+      <p id="subjectInfo">{{ documentary.description }}</p>
+        <a href="transcript" id="transcript">Transcript</a>
+        <ul class="tags">
+            <li>{{ documentary.tags }}</li>
+        </ul>
+        <a>Comments ({{comment_list|length}})</a>
+        {% for c in comment_list %}
+            <p class="comment">{{ c.comment }}</p>
+        {% endfor %}
+        <a href="search" id="discover">discover more stories...</a>
+    </div>
+{% endblock %}
