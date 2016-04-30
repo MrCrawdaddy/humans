@@ -1,2 +1,2 @@
 # humans
-My Humans of the High Country Project for CS4435 
+My Humans of the High Country project for CS4435 
