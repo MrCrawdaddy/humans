@@ -7,21 +7,22 @@
  </head>
  <body>
  {% if error_message %}<p><strong>{{ error_message }}</strong><p>{% endif %}
-   <div id="topBar">
-     <div id="headL">
-         <a href="{% url 'documentaries:index' %}"><span id="boldTitle">humans</span> of the high country</a>
+   <div class="nav-bar">
+     <div class="nav-bar-left">
+         <a href="{% url 'documentaries:index' %}" class="title"><span class="title title-bold">humans</span> of the high country</a>
      </div>
-     <div id=headR>
-       <ul>
-         <li>
+     <div class="nav-bar-right">
+       <ul class="nav-bar-list">
+         <li class="nav-bar-list-element">
            <a href="search">explore</a>
          </li>
-         <li>
+         <li class="nav-bar-list-element">
            <a href="submit">add your story</a>
          </li>
-         <li>
+         <li class="nav-bar-list-element">
            <a href="about">about</a>
          </li>
+         <li class="nav-bar-list-element">
          {% if user.is_authenticated %}
          <div id="user_status"> Welcome, {{user.profile.perfered_name}}<br>
           <a href="{% url 'logout' %}">Logout</a>
@@ -33,7 +34,7 @@
        </ul>
      </div>
    </div>
-   <div id="main">
+   <div class="container-main">
        {% block content %}
        {% endblock %}
    </div>
