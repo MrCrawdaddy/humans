@@ -1,41 +1,46 @@
- {% load staticfiles %}
- <!doctype html>
- <head>
-   <title>humans of the high country</title>
-   <meta charset="utf-8">
-   <link rel="stylesheet" href="{% static "documentaries/style.css" %}">
- </head>
- <body>
- {% if error_message %}<p><strong>{{ error_message }}</strong><p>{% endif %}
-   <div class="nav-bar">
-     <div class="nav-bar-left">
-         <a href="{% url 'documentaries:index' %}" class="title"><span class="title title-bold">humans</span> of the high country</a>
-     </div>
-     <div class="nav-bar-right">
-       <ul class="nav-bar-list">
-         <li class="nav-bar-list-element">
-           <a href="search">explore</a>
-         </li>
-         <li class="nav-bar-list-element">
-           <a href="submit">add your story</a>
-         </li>
-         <li class="nav-bar-list-element">
-           <a href="about">about</a>
-         </li>
-         <li class="nav-bar-list-element">
-         {% if user.is_authenticated %}
-         <div id="user_status"> Welcome, {{user.profile.perfered_name}}<br>
-          <a href="{% url 'logout' %}">Logout</a>
-         </div>
-         {% else %}
-         <a href="{% url 'login' %}">Login</a>
-         {% endif %}
-         </li>
-       </ul>
-     </div>
-   </div>
-   <div class="container-main">
-       {% block content %}
-       {% endblock %}
-   </div>
- </body>
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Humans of the High Country{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'documentaries/style.css' %}" />
+</head>
+
+<body>
+  {% block header %}
+  <header>
+    <span class="page-title"><span class="title-first-word">humans</span> of the high country</span>
+    <ul class="main-menu">
+      <li><a href="/search">explore</a></li>
+      <li><a href="{% url 'documentaries:create' %}">add your story</a></li>
+      <li><a href="/about">about</a></li>
+      <li>
+        {% if user.is_authenticated %}
+        <div class="user-auth">
+          Welcome, {{ user.profile.preferred_name }}
+          <br>
+          <a href="{% url 'logout' %}">logout</a>
+        </div>
+        {% else %}
+        <a href="{% url 'login' %}">login</a> {% endif %}
+      </li>
+      <ul>
+  </header>
+  {% endblock %}
+  <div class="main-container">
+    {% block main_container %}
+    <div class="main-content">
+      {% block main_content %}
+      <p>Main content</p>{% endblock %}
+    </div>
+    <div class="right-sidebar">
+      {% block right_sidebar %}
+      <p>Right Sidebar</p>{% endblock %}
+    </div>
+    {% endblock %}
+  </div>
+</body>
+
+</html>

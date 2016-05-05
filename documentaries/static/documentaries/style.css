@@ -1,259 +1,151 @@
-body{
-	font-family: Arial, Verdana, sans-serif;
-	background-color: #d8d8d8;
-	width: 100%;
-	height: 100%;
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 12px;
+   background-color: #FAFAFA;
+   margin: 0px;
+}
+header {
+   width: 100%;
+   background-color: Gray;
+   color: black;
+   margin: 0px;
+   padding: 0px 12px;
 }
 
-a{
-	text-decoration: none;
+.page-title {
+   font-size: 200%;
 }
 
-/* unvisited link */
-a:link {
-    color: #000000;
+.title-first-word {
+   font-weight: bold;
+   font-size: 150%;
 }
 
-/* visited link */
-a:visited {
-    color: #000000;
+.main-menu {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   float: right;
 }
 
-/* mouse over link */
-a:hover {
-    color: #000000;
+.main-menu li {
+   float: left;
+   margin: 0px;
 }
 
-/* selected link */
-a:active {
-    color: #000000;
+.main-menu li a {
+   display: block;
+   text-align: center;
+   padding: 8px 40px;
+   text-decoration: none;
+   color: black;
+   font-size: 200%;
 }
 
-.tags{
-	line-height: 300%
+.main-menu .user-auth {
+   display: block;
+   text-align: center;
+   padding: 4px 30px;
+   color: black;
+   font-size: 120%;
+   line-height: 70%;
+   height: 100%;
 }
 
-.videoRow caption{
-	text-align: left;
-	font-size: 1.5em;
+.main-menu .user-auth a {
+   text-decoration: none;
+   color: black;
+   font-size: 120%;
 }
 
-.uploadForm{
-	width: 100%;
-	height: 30px;
-	border-width: 3px;
-	border-style: solid;
-	font-size: 1.5em;
+.main-menu li:hover {
+   background-color: Gainsboro;
 }
 
-.uploadBtn{
-	width: 100%;
-	height: 30px;
-	font-size: 150%;
-	margin: 2px;
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background: ghostwhite url("./images/GrandfatherMtnBackground.png") no-repeat left bottom;
+    overflow: hidden;
+    max-width: 1200px;
 }
 
-.center{
-	position: absolute;
-	height: auto;
-  width: 50%;
-  margin: -10% 0 0 -25%;
-	top: 50%;
-	left: 50%;
+.main-content {
+   float: left;
 }
 
-.nav-bar{
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: auto;
-	background-color: #808080;
+.documentary-view {
+   width: 800px;
+   padding: 12px;
 }
 
-.nav-bar-left{
-	float: left;
-	padding-left: 20px;
+.thumbnail-list {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+.thumbnail-list li {
+   float: left;
+   margin: 0px;
+}
+.thumbnail-list li a {
+   display: block;
+   text-align: center;
+   padding: 8px 20px;
+   text-decoration: none;
+}
+.thumbnail-list li:hover {
+   opacity: 0.5;
 }
 
-.nav-bar-right{
-	padding-top: 10px;
-	font-size: 175%;
-  float: right;
-	width: auto;
+.thumbnail {
+   width: 150px;
 }
 
-.nav-bar-list{
-	position: relative;
-	list-style-type: none;
-  padding: 5%;
-	margin: 0;
+.right-sidebar {
+   min-width: 200px;
+   padding: 20px 6px 0px 0px;
+   height: 550px;
+   position: relative;
 }
 
-.nav-bar-list-element{
-	display: inline;
-	margin-right: 10%
+.right-sidebar h1 {
+   font-weight: bold;
+   font-size: 200%;
+   padding: 0px;
+   margin: 3px 0px;
 }
 
-.title{
-	font-size: 175%;
+.right-sidebar h2 {
+   font-weight: 120%;
+   font-size: 140%;
+   padding: 0px;
+   margin: 0px;
 }
 
-.title-bold{
-	font-weight: bold;
-	font-size: 150%;
+.tags {
+   font-size: 140%;
+   text-transform: uppercase;
+   margin: 6px 0px;
 }
 
-.container-main{
-	position: relative;
-	top: 10em;
-	width: 90%;
-	height: 80%;
-	margin: 10px;
-	background: url("images/GrandfatherMtnProfileBgrd.png") no-repeat;
-	background-size: cover;
-	background-position: left;
-	background-color: #ffffff;
+.discover {
+   position: absolute;
+   bottom: 8px;
+   right: 16px;
 }
 
-#pictures{
-	width: 75%;
-	height: 100%;
-	margin-right: 2%;
-	float: left;
+.discover a {
+   padding: 0px 6px 12px 0px;
+   text-decoration: none;
+   color: black;
+   font-size: 120%;
 }
 
-#right{
-	width: 23%;
-	height: 100%;
-	float: right;
-}
-
-#videos{
-	height: 90%;
-	width: 100%;
-	padding: 0px;
-}
-
-#video{
-		width: 100%;
-		height: 75%;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-}
-
-#thumb1,#thumb2,#thumb3,#thumb4{
-	width: 23.5%;
-	height: 23%;
-	margin-bottom: 25px;
-}
-
-#thumb1,#thumb2,#thumb3{
-	margin-right: 2%;
-	float: left;
-}
-
-#thumb4{
-	float:right;
-}
-
-#featured{
-	font-weight: 100;
-	font-size: 120%;
-}
-
-#subjectName{
-	font-style: normal;
-	font-weight: bold;
-	font-size: 150%;
-	margin: 0px;
-	line-height: 50%;
-}
-
-#discover{
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	margin: 25px;
-	font-size: 120%
-}
-
-#searchResults{
-	width: 75%;
-	height: 100%;
-	margin-right: 2%;
-	float: left;
-}
-
-#videos table{
-	width: 100%;
-	height: 27.5%;
-	margin-bottom: 2%;
-	border-collapse: collapse;
-}
-
-#videos tr{
-		margin-left: 0;
-}
-
-#videos td{
-	text-align: center;
-	padding-right: 2%;
-	font-size: 1.1em;
-}
-
-#searchResults img{
-	width: 100%;
-	height: 100%;
-}
-
-#main h1{
-	font-weight: 100;
-}
-#categoryDiv{
-	width: 100%;
-	margin-top: 25px;
-	margin-bottom: 95%;
-}
-
-#searchField{
-	width: 100%;
-	height: 30px;
-	border-width: 3px;
-	border-style: solid;
-}
-
-#category{
-	width: 100%;
-	height: 30px;
-	font-size: 150%;
-}
-
-#categoryLabel{
-	display: block;
-	width: 100%;
-	font-weight: 100;
-	font-size: 200%;
-}
-
-#searchLabel{
-	display: block;
-	font-weight: 100;
-	font-size: 200%;
-}
-
-#uploadTextArea{
-	width: 100%;
-	border-width: 3px;
-	border-style: solid;
-	border-color: #000000;
-	font-size: 1.5em;
-}
-
-#user_status{
-    margin:0px;
-    padding:0px;
-    font-size:50%;
-    display: inline;
+p.comment {
+    position: relative;
+    left: 12px;
 }
